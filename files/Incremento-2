@@ -1,0 +1,16 @@
+Capítulo II: Encapsulamiento
+
+Hemos visto las falencias del diseño anterior, y luego de investigar un poco nos encontramos con el concepto de
+Encapsulamiento. ¡Es una buena ocasión para incorporarlo!
+Se pide que utilicemos este concepto para asegurarnos de las siguientes restricciones del dominio del problema:
+
+1- No puedo extraer dinero que no poseo
+2- No puedo extraer ni depositar dinero negativo
+3- El saldo no puede afectarse más allá que por depósitos o extracciones
+
+
+Preguntas para profundizar:
+1- ¿Qué ventaja representó la incorporación del Encapsulamiento en el problema?
+2- ¿Qué desventaja podríamos encontrar?
+3- ¿Es realmente Programación Orientada a Objetos? ¿Cómo puedo saberlo?
+4- ¿Qué acciones se utilizaron para prevenir la realización de operaciones no válidas?
