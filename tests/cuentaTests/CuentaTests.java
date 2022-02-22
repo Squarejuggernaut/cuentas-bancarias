@@ -46,5 +46,19 @@ public class CuentaTests {
 	public void noPermiteRetirarMasDineroDelQueSeTiene() {
 		cuenta1.retirar(100);
 	}
+	
+	@Test
+	public void transferenciaExitosa() {
+		Cuenta cuentaOrigen = new Cuenta();
+		cuentaOrigen.depositar(10_000);
+		assertEquals(10_000, cuentaOrigen.getSaldo(), 0);
+		
+		Cuenta cuentaDestino = new Cuenta();
+		assertEquals(0, cuentaDestino.getSaldo(), 0);
+		
+		cuentaOrigen.transferir(550, cuentaDestino);
+		assertEquals(9_450, cuentaOrigen.getSaldo(), 0);
+		assertEquals(550, cuentaDestino.getSaldo(), 0);
+	}
 
 }
