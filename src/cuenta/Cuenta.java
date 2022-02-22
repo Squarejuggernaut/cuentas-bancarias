@@ -2,7 +2,7 @@ package cuenta;
 
 /**
  * Manejo super básico de una cuenta bancaria se puede depositar dinero, retirar
- * dinero y consultar el saldo.
+ * dinero, consultar el saldo y transferir dinero entre dos o mas cuentas.
  * 
  * @author Facundo Paz
  *
@@ -51,6 +51,19 @@ public class Cuenta {
 			throw new Error("Saldo insuficiente");
 		}
 	}
+	
+	/**
+	 * Método encargado de realizar transferencia de montos entre dos cuentas restará el monto ingresado de la cuenta origen y se lo agregará a la cuenta destino.
+	 * @param monto - Cantidad a transferir.
+	 * @param cuentaDestino - A la cuenta que le vamos a transferir.
+	 * @
+	 */
+	public synchronized void transferir(double monto, Cuenta cuentaDestino) {
+		if(dineroValido(monto) && this.saldo >= monto) {
+			cuentaDestino.depositar(monto);
+			this.retirar(monto);
+		}
+	}
 
 	/**
 	 * Corrobora que lo que se ingrese sea un valor positivo.
@@ -64,7 +77,6 @@ public class Cuenta {
 			return true;
 		}
 		throw new Error("No se admiten montos negativos");
-
 	}
 
 }
