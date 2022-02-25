@@ -9,7 +9,7 @@ package cuenta;
  */
 
 public class Cuenta {
-	private double saldo;
+	protected double saldo;
 
 	/**
 	 * Construye un objeto Cuenta con un saldo = 0.
@@ -72,7 +72,7 @@ public class Cuenta {
 	 * @return verdadero si el saldo es mayor a 0.
 	 * @throws Error si encuentra un valor negativo lanzará el Error.
 	 */
-	private boolean dineroValido(double dinero) {
+	protected boolean dineroValido(double dinero) {
 		if (dinero > 0) {
 			return true;
 		}
